@@ -14,19 +14,19 @@
 	}
 
 	function register_scripts() {
-		$files = scandir(TEMPLATE_DIR.'/js');
+		$files = scandir(TEMPLATE_DIR.'/js/lib');
 		foreach ($files as $file) {
 			$dependecy = [];
 			if ($file !== 'jquery.min.js') array_push($dependecy, 'jquery.min.js');
 
-			if (strpos($file, '.js') !== false && $file !== 'main.js') {
-				wp_enqueue_script($file, get_template_directory_uri().'/js/'.$file, $dependecy, '1', true);
+			if (strpos($file, '.js') !== false) {
+				wp_enqueue_script($file, get_template_directory_uri().'/js/lib/'.$file, $dependecy, '1', true);
 			}
 		}
+		wp_enqueue_script('particle', get_template_directory_uri().'/js/particle.js', false, '1', true);
 		wp_enqueue_script('main', get_template_directory_uri().'/js/main.js', false, '1', true);
 	}
 
 
 	add_action('wp_enqueue_scripts', 'register_scripts');
-	
 	add_action('wp_enqueue_scripts', 'register_styles');
