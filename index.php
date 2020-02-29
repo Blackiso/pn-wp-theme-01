@@ -1,32 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Snipp - Free Bootstrap 4 Template by Colorlib</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,700,800" rel="stylesheet">
+    <head>
+        <title>Snipp - Free Bootstrap 4 Template by Colorlib</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,700,800" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
+        <?php wp_head(); ?>
+    </head>
+    <body>
     
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
@@ -80,10 +63,10 @@
               <div class="text-1 p-4 d-flex align-items-center">
                 <h3>The Verge<br><span class="tag">Website</span></h3>
               </div>
-              <img src="images/image_1.jpg" class="img-fluid" alt="">
+              <img src="<?php echo TEMPLATE_URI ?>/images/image_1.jpg" class="img-fluid" alt="">
               <div class="text p-4 d-flex align-items-center">
                 <div class="user d-flex align-items-center">
-                  <div class="user-img mr-3" style="background-image: url(images/person_1.jpg);"></div>
+                  <div class="user-img mr-3" style="background-image: url(<?php echo TEMPLATE_URI ?>/images/person_1.jpg);"></div>
                   <h3>John Bruce <br><span class="position">Designer</span></h3>
                 </div>
               </div>
@@ -100,10 +83,10 @@
                       <div class="text-1 p-4 d-flex align-items-center">
                         <h3>Racks<br><span class="tag">Website</span></h3>
                       </div>
-                      <img src="images/image_5.jpg" class="img-fluid" alt="">
+                      <img src="<?php echo TEMPLATE_URI ?>/images/image_5.jpg" class="img-fluid" alt="">
                       <div class="text p-4 d-flex align-items-center">
                         <div class="user d-flex align-items-center">
-                          <div class="user-img mr-3" style="background-image: url(images/person_1.jpg);"></div>
+                          <div class="user-img mr-3" style="background-image: url(<?php echo TEMPLATE_URI ?>/images/person_1.jpg);"></div>
                           <h3>John Bruce <br><span class="position">Designer</span></h3>
                         </div>
                       </div>
@@ -115,10 +98,10 @@
                       <div class="text-1 p-4 d-flex align-items-center">
                         <h3>Zendesk<br><span class="tag">Website</span></h3>
                       </div>
-                      <img src="images/image_4.jpg" class="img-fluid" alt="">
+                      <img src="<?php echo TEMPLATE_URI ?>/images/image_4.jpg" class="img-fluid" alt="">
                       <div class="text p-4 d-flex align-items-center">
                         <div class="user d-flex align-items-center">
-                          <div class="user-img mr-3" style="background-image: url(images/person_1.jpg);"></div>
+                          <div class="user-img mr-3" style="background-image: url(<?php echo TEMPLATE_URI ?>/images/person_1.jpg);"></div>
                           <h3>John Bruce <br><span class="position">Designer</span></h3>
                         </div>
                       </div>
@@ -135,10 +118,10 @@
                       <div class="text-1 p-4 d-flex align-items-center">
                         <h3>Curator<br><span class="tag">Website</span></h3>
                       </div>
-                      <img src="images/image_6.jpg" class="img-fluid" alt="">
+                      <img src="<?php echo TEMPLATE_URI ?>/images/image_6.jpg" class="img-fluid" alt="">
                       <div class="text p-4 d-flex align-items-center">
                         <div class="user d-flex align-items-center">
-                          <div class="user-img mr-3" style="background-image: url(images/person_1.jpg);"></div>
+                          <div class="user-img mr-3" style="background-image: url(<?php echo TEMPLATE_URI ?>/images/person_1.jpg);"></div>
                           <h3>John Bruce <br><span class="position">Designer</span></h3>
                         </div>
                       </div>
@@ -149,10 +132,10 @@
                       <div class="text-1 p-4 d-flex align-items-center">
                         <h3>Tasty<br><span class="tag">Website</span></h3>
                       </div>
-                      <img src="images/image_3.jpg" class="img-fluid" alt="">
+                      <img src="<?php echo TEMPLATE_URI ?>/images/image_3.jpg" class="img-fluid" alt="">
                       <div class="text p-4 d-flex align-items-center">
                         <div class="user d-flex align-items-center">
-                          <div class="user-img mr-3" style="background-image: url(images/person_1.jpg);"></div>
+                          <div class="user-img mr-3" style="background-image: url(<?php echo TEMPLATE_URI ?>/images/person_1.jpg);"></div>
                           <h3>John Bruce <br><span class="position">Designer</span></h3>
                         </div>
                       </div>
@@ -168,10 +151,10 @@
               <div class="text-1 p-4 d-flex align-items-center">
                 <h3>Voyage<br><span class="tag">Website</span></h3>
               </div>
-              <img src="images/image_2.jpg" class="img-fluid" alt="">
+              <img src="<?php echo TEMPLATE_URI ?>/images/image_2.jpg" class="img-fluid" alt="">
               <div class="text p-4 d-flex align-items-center">
                 <div class="user d-flex align-items-center">
-                  <div class="user-img mr-3" style="background-image: url(images/person_1.jpg);"></div>
+                  <div class="user-img mr-3" style="background-image: url(<?php echo TEMPLATE_URI ?>/images/person_1.jpg);"></div>
                   <h3>John Bruce <br><span class="position">Designer</span></h3>
                 </div>
               </div>
@@ -275,7 +258,7 @@
         </div>
         <div class="row">
           <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="portfolio.html" class="image" style="background-image: url('images/work-1.jpg'); " data-scrollax=" properties: { translateY: '-20%'}">
+            <a href="portfolio.html" class="image" style="background-image: url('<?php echo TEMPLATE_URI ?>/images/work-1.jpg'); " data-scrollax=" properties: { translateY: '-20%'}">
             </a>
             <div class="text">
               <h4 class="subheading">Illustration</h4>
@@ -285,7 +268,7 @@
             </div>
           </div>
           <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="portfolio.html" class="image image-2 order-2" style="background-image: url('images/work-2.jpg');" data-scrollax=" properties: { translateY: '-20%'}"></a>
+            <a href="portfolio.html" class="image image-2 order-2" style="background-image: url('<?php echo TEMPLATE_URI ?>/images/work-2.jpg');" data-scrollax=" properties: { translateY: '-20%'}"></a>
             <div class="text order-1">
               <h4 class="subheading">Application</h4>
               <h2 class="heading"><a href="portfolio.html">Even the all-powerful Pointing has no control</a></h2>
@@ -294,7 +277,7 @@
             </div>
           </div>
           <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
-            <a href="portfolio.html" class="image" style="background-image: url('images/work-3.jpg'); " data-scrollax=" properties: { translateY: '-20%'}"></a>
+            <a href="portfolio.html" class="image" style="background-image: url('<?php echo TEMPLATE_URI ?>/images/work-3.jpg'); " data-scrollax=" properties: { translateY: '-20%'}"></a>
             <div class="text">
               <h4 class="subheading">Web Design</h4>
               <h2 class="heading"><a href="portfolio.html">Even the all-powerful Pointing has no control</a></h2>
@@ -325,7 +308,7 @@
             <div class="carousel-testimony owl-carousel ftco-owl">
               <div class="item text-center">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-4" style="background-image: url(<?php echo TEMPLATE_URI ?>/images/person_1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -339,7 +322,7 @@
               </div>
               <div class="item text-center">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_2.jpg)">
+                  <div class="user-img mb-4" style="background-image: url(<?php echo TEMPLATE_URI ?>/images/person_2.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -353,7 +336,7 @@
               </div>
               <div class="item text-center">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_3.jpg)">
+                  <div class="user-img mb-4" style="background-image: url(<?php echo TEMPLATE_URI ?>/images/person_3.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -367,7 +350,7 @@
               </div>
               <div class="item text-center">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-4" style="background-image: url(<?php echo TEMPLATE_URI ?>/images/person_1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -381,7 +364,7 @@
               </div>
               <div class="item text-center">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-4" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-4" style="background-image: url(<?php echo TEMPLATE_URI ?>/images/person_1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -448,7 +431,7 @@
         <div class="row">
           <div class="col-md-4 ftco-animate">
             <div class="blog-entry">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('<?php echo TEMPLATE_URI ?>/images/image_1.jpg');">
               </a>
               <div class="text p-4 d-block">
                 <div class="meta mb-3">
@@ -462,7 +445,7 @@
           </div>
           <div class="col-md-4 ftco-animate">
             <div class="blog-entry" data-aos-delay="100">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('<?php echo TEMPLATE_URI ?>/images/image_2.jpg');">
               </a>
               <div class="text p-4">
                 <div class="meta mb-3">
@@ -476,7 +459,7 @@
           </div>
           <div class="col-md-4 ftco-animate">
             <div class="blog-entry" data-aos-delay="200">
-              <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
+              <a href="blog-single.html" class="block-20" style="background-image: url('<?php echo TEMPLATE_URI ?>/images/image_3.jpg');">
               </a>
               <div class="text p-4">
                 <div class="meta mb-3">
@@ -552,25 +535,7 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/particles.min.js"></script>
-  <script src="js/particle.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
+    <?php wp_footer(); ?>
     
   </body>
 </html>
