@@ -28,4 +28,5 @@
 
 
 	add_action('wp_enqueue_scripts', 'register_scripts');
+	
 	add_action('wp_enqueue_scripts', 'register_styles');
