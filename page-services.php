@@ -21,50 +21,13 @@
                 </div>
             </div>
             <div class="row mb-5">
-                <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-                    <div class="media block-6 services d-block text-center">
-                        <div class="d-flex justify-content-center">
-                            <div class="icon color-3 d-flex justify-content-center mb-3"><span class="align-self-center icon-lightbulb-o"></span></div>
-                        </div>
-                        <div class="media-body p-2 mt-3">
-                            <h3 class="heading">Strategy</h3>
-                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-                    <div class="media block-6 services d-block text-center">
-                        <div class="d-flex justify-content-center">
-                            <div class="icon color-1 d-flex justify-content-center mb-3"><span class="align-self-center icon-laptop"></span></div>
-                        </div>
-                        <div class="media-body p-2 mt-3">
-                            <h3 class="heading">Design</h3>
-                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-                    <div class="media block-6 services d-block text-center">
-                        <div class="d-flex justify-content-center">
-                            <div class="icon color-2 d-flex justify-content-center mb-3"><span class="align-self-center icon-gear"></span></div>
-                        </div>
-                        <div class="media-body p-2 mt-3">
-                            <h3 class="heading">Development</h3>
-                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-                    <div class="media block-6 services d-block text-center">
-                        <div class="d-flex justify-content-center">
-                            <div class="icon color-4 d-flex justify-content-center mb-3"><span class="align-self-center icon-live_help"></span></div>
-                        </div>
-                        <div class="media-body p-2 mt-3">
-                            <h3 class="heading">Help &amp; Supports</h3>
-                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
-                        </div>
-                    </div>
-                </div>
+                 <?php 
+            
+                    for($i = 0; $i < 4; $i++) {
+                        get_part('single-service-box', ['index' => $i]);
+                    }
+
+                 ?>
             </div>
             <div class="row mt-5">
                 <div class="col-md-4 ftco-animate">

@@ -46,37 +46,42 @@
 	function create_portfolio_post_type() {
 		$labels = [
 			'name'                => __( 'Portfolios'),
-	        'singular_name'       => __( 'Portfolio'),
-	        'menu_name'           => __( 'Portfolios'),
-	        'parent_item_colon'   => __( 'Parent Portfolio'),
-	        'all_items'           => __( 'All Portfolios'),
-	        'view_item'           => __( 'View Portfolio'),
-	        'add_new_item'        => __( 'Add New Portfolio'),
-	        'add_new'             => __( 'Add New'),
-	        'edit_item'           => __( 'Edit Portfolio'),
-	        'update_item'         => __( 'Update Portfolio'),
-	        'search_items'        => __( 'Search Portfolios'),
-	        'not_found'           => __( 'Not Found'),
-	        'not_found_in_trash'  => __( 'Not found in Trash'),
+			'singular_name'       => __( 'Portfolio'),
+			'menu_name'           => __( 'Portfolios'),
+			'parent_item_colon'   => __( 'Parent Portfolio'),
+			'all_items'           => __( 'All Portfolios'),
+			'view_item'           => __( 'View Portfolio'),
+			'add_new_item'        => __( 'Add New Portfolio'),
+			'add_new'             => __( 'Add New'),
+			'edit_item'           => __( 'Edit Portfolio'),
+			'update_item'         => __( 'Update Portfolio'),
+			'search_items'        => __( 'Search Portfolios'),
+			'not_found'           => __( 'Not Found'),
+			'not_found_in_trash'  => __( 'Not found in Trash'),
 		];
 
 		register_post_type('portfolio', [
 			'label'               => __('Portfolio'),
 			'labels'              => $labels,
 			'hierarchical'        => false,
-	        'public'              => true,
-	        'show_ui'             => true,
-	        'show_in_menu'        => true,
-	        'show_in_nav_menus'   => true,
-	        'show_in_admin_bar'   => true,
-	        'menu_position'       => 5,
-	        'can_export'          => false,
-	        'has_archive'         => false,
-	        'exclude_from_search' => false,
-	        'publicly_queryable'  => true,
-	        'capability_type'     => 'post',
-	        'show_in_rest'        => true,
+			'public'              => true,
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'show_in_nav_menus'   => true,
+			'show_in_admin_bar'   => true,
+			'menu_position'       => 5,
+			'can_export'          => false,
+			'has_archive'         => false,
+			'exclude_from_search' => false,
+			'publicly_queryable'  => true,
+			'capability_type'     => 'post',
+			'show_in_rest'        => true,
 		]);
+	}
+
+	function get_part($name, $args = null) {
+		$VARS = $args;
+		include(locate_template('template-parts/'.$name.'.php', false, false));
 	}
 
 	// Wordpress hooks:
