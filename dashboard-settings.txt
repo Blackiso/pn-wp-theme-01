@@ -1,0 +1,2 @@
+-Set homepage display to static page 'Home'.
+-Set permalinks to 'Post name'.
