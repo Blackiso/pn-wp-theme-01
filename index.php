@@ -1,43 +1,8 @@
-<<<<<<< HEAD
 <?php get_header(); ?>
 <div class="js-fullheight">
   <div class="hero-wrap js-fullheight">
     <div class="overlay"></div>
     <div id="particles-js"></div>
-=======
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Snipp - Free Bootstrap 4 Template by Colorlib</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,700,800" rel="stylesheet">
-
-    <!-- <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.timepicker.css">
-
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css"> -->
-    <?php wp_head(); ?>
-  </head>
-  <body>
-    
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
->>>>>>> f6e6904f9a189fd27c91988ce75814956308aa04
     <div class="container">
       <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
         <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
