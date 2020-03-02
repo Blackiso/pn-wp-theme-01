@@ -7,19 +7,19 @@
       <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
         <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
           <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
-            <?php 
-              $header_text = get_theme_mod( "header_section_settings", "We love to create Beautiful websites" );
-              $highlight_text = get_theme_mod( "header_section_settings_2", "Beautiful" );
-              echo str_replace($highlight_text, "<strong>$highlight_text</strong>", $header_text);
+            <?php
+            $header_text = get_theme_mod("header_section_settings", "We love to create Beautiful websites");
+            $highlight_text = get_theme_mod("header_section_settings_2", "Beautiful");
+            echo str_replace($highlight_text, "<strong>$highlight_text</strong>", $header_text);
             ?>
           </h1>
           <?php
-            $show_call_to_action_button = get_theme_mod( "header_section_settings_3", true );
-            $call_to_action_button_text = get_theme_mod( "header_section_settings_4", "Get in touch" );
-            $call_to_action_button_url = get_theme_mod( "header_section_settings_5", "#" );
-            $call_to_action_button_target = get_theme_mod( "header_section_settings_6", false ) ? "_blank": "";
+          $show_call_to_action_button = get_theme_mod("header_section_settings_3", true);
+          $call_to_action_button_text = get_theme_mod("header_section_settings_4", "Get in touch");
+          $call_to_action_button_url = get_theme_mod("header_section_settings_5", "#");
+          $call_to_action_button_target = get_theme_mod("header_section_settings_6", false) ? "_blank" : "";
 
-            if( $show_call_to_action_button ) echo "
+          if ($show_call_to_action_button) echo "
             <p data-scrollax=\"properties: { translateY: '30%', opacity: 1.6 }\">
               <a 
               href='$call_to_action_button_url' 
@@ -449,30 +449,4 @@
     </div>
   </section>
 
-<<<<<<< HEAD
   <?php get_footer(); ?>
-=======
-  <!-- <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/particles.min.js"></script>
-  <script src="js/particle.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script> -->
-  <?php wp_footer(); ?>
-    
-  </body>
-</html>
->>>>>>> f6e6904f9a189fd27c91988ce75814956308aa04
