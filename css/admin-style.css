@@ -1,0 +1,6 @@
+#sub-accordion-section-header_section .customize-control-input input[type="input"]{
+    border: 1px solid silver;
+    border-radius: 4px;
+    padding: 4px 8px;
+    width: 100%;
+}
