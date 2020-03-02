@@ -18,13 +18,13 @@ function section_header($wp_customize, $panel_id)
         'capability' => 'edit_theme_options',
         'type' => 'theme_mod'
     ));
+    
     $wp_customize->add_control($prefix . "_settings", array(
         'label'          => __('Header Text', THEME_NAME),
         'section'        => "$prefix",
         'settings'       => $prefix . "_settings",
         'type'           => 'text'
     ));
-    // echo "<p class=\"description\">This is my description</p>";
 
     // Text To Highlight
     $wp_customize->add_setting($prefix . "_settings_2", array(

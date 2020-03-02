@@ -1,5 +1,6 @@
 $(document).ready(function() {
   Customizer_Header_Options_Visibility();
+  Customizer_Subscribe_Options_Visibility();
 });
 
 function Customizer_Header_Options_Visibility() {
@@ -12,6 +13,28 @@ function Customizer_Header_Options_Visibility() {
   }
   changeVisibility(showCallToActionButton.is(":checked"));
   showCallToActionButton.change(function(e) {
+    changeVisibility(e.target.checked);
+  });
+}
+
+function Customizer_Subscribe_Options_Visibility() {
+  var showSubscribeSection = $(
+    "#_customize-input-subscribe_section_settings_1"
+  );
+
+  function changeVisibility(bool) {
+    $("#customize-control-subscribe_section_settings_2")[
+      bool ? "show" : "hide"
+    ]();
+    $("#customize-control-subscribe_section_settings_3")[
+      bool ? "show" : "hide"
+    ]();
+    $("#customize-control-subscribe_section_settings_4")[
+      bool ? "show" : "hide"
+    ]();
+  }
+  changeVisibility(showSubscribeSection.is(":checked"));
+  showSubscribeSection.change(function(e) {
     changeVisibility(e.target.checked);
   });
 }
