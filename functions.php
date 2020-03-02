@@ -1,7 +1,13 @@
 <?php
-	
+
 	define('TEMPLATE_DIR', get_template_directory());
 	define('TEMPLATE_URI', get_template_directory_uri());
+
+	//For Costimizer
+	require_once(TEMPLATE_DIR.'/inc/sanitizers.php');
+	require_once(TEMPLATE_DIR.'/inc/CustomizerUI.php');
+	require_once(TEMPLATE_DIR.'/inc/Customize.php');
+	require_once(TEMPLATE_DIR.'/inc/customizer.php');
 
 	// Theme features:
 	add_theme_support('menus');
@@ -57,7 +63,7 @@
 			'update_item'         => __( 'Update Portfolio'),
 			'search_items'        => __( 'Search Portfolios'),
 			'not_found'           => __( 'Not Found'),
-			'not_found_in_trash'  => __( 'Not found in Trash'),
+			'not_found_in_trash'  => __( 'Not found in Trash')
 		];
 
 		register_post_type('portfolio', [
@@ -69,6 +75,7 @@
 			'show_in_menu'        => true,
 			'show_in_nav_menus'   => true,
 			'show_in_admin_bar'   => true,
+			'menu_icon'           => 'dashicons-media-document',
 			'menu_position'       => 5,
 			'can_export'          => false,
 			'has_archive'         => false,
@@ -84,7 +91,9 @@
 		include(locate_template('template-parts/'.$name.'.php', false, false));
 	}
 
+
 	// Wordpress hooks:
+	add_action('customize_register', 'customize_register');
 	add_action('init', 'create_portfolio_post_type');
 	add_action('after_setup_theme', 'register_menus');
 	add_action('wp_enqueue_scripts', 'register_scripts');
