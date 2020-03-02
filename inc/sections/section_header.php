@@ -22,7 +22,7 @@ function section_header($wp_customize, $panel_id)
         'label'          => __('Header Text', THEME_NAME),
         'section'        => "$prefix",
         'settings'       => $prefix . "_settings",
-        'type'           => 'input'
+        'type'           => 'text'
     ));
     // echo "<p class=\"description\">This is my description</p>";
 
@@ -36,7 +36,7 @@ function section_header($wp_customize, $panel_id)
         'label'          => __('Highlight Word', THEME_NAME),
         'section'        => "$prefix",
         'settings'       => $prefix . "_settings_2",
-        'type'           => 'input'
+        'type'           => 'text'
     ));
 
     // CTA Button
@@ -62,7 +62,7 @@ function section_header($wp_customize, $panel_id)
         'label'          => __('Button Text', THEME_NAME),
         'section'        => "$prefix",
         'settings'       => $prefix . "_settings_4",
-        'type'           => 'input'
+        'type'           => 'text'
     ));
 
     // Button url
@@ -75,10 +75,10 @@ function section_header($wp_customize, $panel_id)
         'label'          => __('Button URL', THEME_NAME),
         'section'        => "$prefix",
         'settings'       => $prefix . "_settings_5",
-        'type'           => 'input'
+        'type'           => 'text'
     ));
 
-    // Button url
+    // Open url in new tab ?
     $wp_customize->add_setting($prefix . "_settings_6", array(
         'default' => false,
         'capability' => 'edit_theme_options',
@@ -90,4 +90,17 @@ function section_header($wp_customize, $panel_id)
         'settings'       => $prefix . "_settings_6",
         'type'           => 'checkbox'
     ));
+
+    // Button
+    // $wp_customize->add_setting($prefix . "_settings_7", array(
+    //     'default' => "submit",
+    //     'capability' => 'edit_theme_options',
+    //     'type' => 'theme_mod'
+    // ));
+    // $wp_customize->add_control($prefix . "_settings_7", array(
+    //     'label'          => __('submit 2', THEME_NAME),
+    //     'section'        => "$prefix",
+    //     'settings'       => $prefix . "_settings_7",
+    //     'type'           => 'button'
+    // ));
 }

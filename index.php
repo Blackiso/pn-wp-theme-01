@@ -433,7 +433,7 @@
                 </a>
                 <div class="text p-4 d-block">
                   <div class="meta mb-3">
-                    <div><a href="#"><?php the_time('M H, Y'); ?></a></div>
+                    <div><a href="#"><?php the_time('M d, Y'); ?></a></div>
                     <!-- <div><a href="#">July 12, 2018</a></div> -->
                     <div><a href="#"><?php the_author_nickname(); ?></a></div>
                     <div><a href="#" class="meta-chat"><span class="icon-chat"></span> <?php comments_number(0); ?></a></div>

@@ -46,14 +46,18 @@ function wp_enque_functions()
     }
 }
 
-function load_admin_style()
+function load_admin_script()
 {
     wp_register_style('admin_css', get_template_directory_uri() . '/css/admin-style.css', false, '1.0.0');
     wp_enqueue_style('admin_css');
+    wp_register_script('jquery.min.js', get_template_directory_uri() . '/js/jquery.min.js', false, "1.0.0", true);
+    wp_enqueue_script('jquery.min.js');
+    wp_register_script('custom_script', get_template_directory_uri() . '/js/custom_script.js', false, "1.0.0", true);
+    wp_enqueue_script('custom_script');
 }
 
 add_action('wp_enqueue_scripts', 'wp_enque_functions');
-add_action('admin_enqueue_scripts', 'load_admin_style');
+add_action('admin_enqueue_scripts', 'load_admin_script');
 
 // theme customizer files
 require get_template_directory() . "/inc/customizer.php";
