@@ -35,6 +35,10 @@
 		wp_enqueue_script('main', get_template_directory_uri().'/js/main.js', false, '1', true);
 	}
 
+	function customizer_script() {
+		wp_enqueue_script('customizer.main.js', get_template_directory_uri().'/js/wp_customizer.js', ['customize-controls'], '1', true);
+	}
+
 	function menu_custom_li_classes($classes) {
 		$classes[] = 'nav-item';
 		return $classes;
@@ -91,12 +95,12 @@
 		include(locate_template('template-parts/'.$name.'.php', false, false));
 	}
 
-
 	// Wordpress hooks:
 	add_action('customize_register', 'customize_register');
 	add_action('init', 'create_portfolio_post_type');
 	add_action('after_setup_theme', 'register_menus');
 	add_action('wp_enqueue_scripts', 'register_scripts');
 	add_action('wp_enqueue_scripts', 'register_styles');
+	add_action('customize_controls_enqueue_scripts', 'customizer_script');
 	add_filter('nav_menu_css_class', 'menu_custom_li_classes');
 	add_filter('nav_menu_link_attributes', 'menu_custom_a_classes');

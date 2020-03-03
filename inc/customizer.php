@@ -19,10 +19,37 @@
 			'panel' => $panel
 		];
 
-		$customizerUi->preset_input_text('about_text', 'About You', 'Write a brief description about you.', 'Discription...', $about_section, 'textarea');
-		$customizerUi->preset_input_text('about_text_highlight', 'Highlighted Word', 'Enter word that you want to highlight.', 'Word...', $about_section);
-		$customizerUi->preset_input_text('about_text_btn', 'Button Text', 'Enter text to be showen on the button.', 'Text...', $about_section);
-		$customizerUi->preset_input_text('about_text_btn_link', 'Button Link', 'Enter link for the button.', 'Link...', $about_section);
+		$customizerUi->preset_input_checkbox('display_about', 'About Section', 'Check if you want to display about section', $about_section);
+
+		$customizerUi->preset_input_text(
+			'about_text', 
+			'About You', 
+			'Write a brief description about you.', 
+			'Discription...', 
+			$about_section, 
+			'textarea'
+		);
+		$customizerUi->preset_input_text(
+			'about_text_highlight', 
+			'Highlighted Word', 
+			'Enter word that you want to highlight.', 
+			'Word...', 
+			$about_section
+		);
+		$customizerUi->preset_input_text(
+			'about_text_btn', 
+			'Button Text', 
+			'Enter text to be showen on the button.', 
+			'Text...', 
+			$about_section
+		);
+		$customizerUi->preset_input_text(
+			'about_text_btn_link', 
+			'Button Link', 
+			'Enter link for the button.', 
+			'Link...', 
+			$about_section
+		);
 	}
 
 	function customizer_about_section_text() {
