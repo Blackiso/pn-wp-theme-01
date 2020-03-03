@@ -2,8 +2,11 @@
 
 define('TEMPLATE_URI', get_template_directory_uri());
 
+require get_template_directory() . "/wp_bootstrap_navwalker.php";
+
 function wp_enque_functions()
 {
+    // CSS & JS Files
     $CSS_FILES = array(
         "open-iconic-bootstrap.min.css",
         "animate.css",
@@ -46,6 +49,12 @@ function wp_enque_functions()
     }
 }
 
+function wpb_theme_setup()
+{
+    // nav menus
+    register_nav_menus(array('primary' => __('Primary Menu')));
+}
+
 function load_admin_script()
 {
     wp_register_style('admin_css', get_template_directory_uri() . '/css/admin-style.css', false, '1.0.0');
@@ -56,6 +65,7 @@ function load_admin_script()
     wp_enqueue_script('custom_script');
 }
 
+add_action('after_setup_theme', 'wpb_theme_setup');
 add_action('wp_enqueue_scripts', 'wp_enque_functions');
 add_action('admin_enqueue_scripts', 'load_admin_script');
 
