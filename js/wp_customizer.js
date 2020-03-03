@@ -9,10 +9,7 @@
 
 		function withValue(value) {
 			controles.forEach(control => {
-				if(control.id !== controlId) {
-					var elemnt = document.querySelector(control.selector);
-					elemnt.style.display =  value == false ? "none" : "block";
-				}
+				if(control.id !== controlId) control.active.set(value);
 			});
 		}
 
