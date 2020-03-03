@@ -8,6 +8,7 @@
 	require_once(TEMPLATE_DIR.'/inc/CustomizerUI.php');
 	require_once(TEMPLATE_DIR.'/inc/Customize.php');
 	require_once(TEMPLATE_DIR.'/inc/customizer.php');
+	require_once(TEMPLATE_DIR.'/inc/admin_panel_customization.php');
 
 	// Theme features:
 	add_theme_support('menus');
@@ -16,9 +17,18 @@
 		$files = scandir(TEMPLATE_DIR.'/css');
 		foreach ($files as $file) {
 			if (strpos($file, '.css') !== false) {
-				wp_enqueue_style($file, get_template_directory_uri().'/css/'.$file, false, '1', 'all');
+				wp_enqueue_style($file, TEMPLATE_URI.'/css/'.$file, false, '1', 'all');
 			}
 		}
+	}
+
+	function load_admin_style() {
+		wp_enqueue_style('admin_css_panel', TEMPLATE_URI.'/css/admin/admin-panel.css', false, '1', 'all');
+	}
+
+	function load_admin_scripts($hook) {
+		if ($hook !== 'post.php') return;
+		wp_enqueue_script('admin_js_panel', TEMPLATE_URI.'/js/admin-panel.js');
 	}
 
 	function register_scripts() {
@@ -28,15 +38,15 @@
 			if ($file !== 'jquery.min.js') array_push($dependecy, 'jquery.min.js');
 
 			if (strpos($file, '.js') !== false) {
-				wp_enqueue_script($file, get_template_directory_uri().'/js/lib/'.$file, $dependecy, '1', true);
+				wp_enqueue_script($file, TEMPLATE_URI.'/js/lib/'.$file, $dependecy, '1', true);
 			}
 		}
-		wp_enqueue_script('particle', get_template_directory_uri().'/js/particle.js', false, '1', true);
-		wp_enqueue_script('main', get_template_directory_uri().'/js/main.js', false, '1', true);
+		wp_enqueue_script('particle', TEMPLATE_URI.'/js/particle.js', false, '1', true);
+		wp_enqueue_script('main', TEMPLATE_URI.'/js/main.js', false, '1', true);
 	}
 
 	function customizer_script() {
-		wp_enqueue_script('customizer.main.js', get_template_directory_uri().'/js/wp_customizer.js', ['customize-controls'], '1', true);
+		wp_enqueue_script('customizer.main.js', TEMPLATE_URI.'/js/wp_customizer.js', ['customize-controls'], '1', true);
 	}
 
 	function menu_custom_li_classes($classes) {
@@ -107,5 +117,9 @@
 	add_action('wp_enqueue_scripts', 'register_scripts');
 	add_action('wp_enqueue_scripts', 'register_styles');
 	add_action('customize_controls_enqueue_scripts', 'customizer_script');
+	add_action('admin_enqueue_scripts', 'load_admin_style');
+	add_action('admin_enqueue_scripts', 'load_admin_scripts');
 	add_filter('nav_menu_css_class', 'menu_custom_li_classes');
 	add_filter('nav_menu_link_attributes', 'menu_custom_a_classes');
+	
+ 
