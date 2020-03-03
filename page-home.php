@@ -114,32 +114,11 @@
                     </a>
                 </div>
             </div>
-            <?php get_part('about-box'); ?>
+            <?php get_part('about-section'); ?>
         </div>
     </section>
 </div>
-<section class="ftco-section">
-    <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-            <div class="col-md-6 text-center heading-section ftco-animate">
-                <span class="subheading">Our Services</span>
-                <h2 class="mb-4">Web &amp; Mobile app design, bring your ideas to life</h2>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-            </div>
-        </div>
-        <div class="row">
-            
-            <?php 
-            
-                for($i = 0; $i < 4; $i++) {
-                    get_part('single-service-box', ['index' => $i]);
-                }
-
-             ?>
-
-        </div>
-    </div>
-</section>
+<?php get_part('services-section'); ?>
 <section class="ftco-section-parallax">
     <div class="parallax-img d-flex align-items-center">
         <div class="container">

@@ -15,7 +15,7 @@
     <div class="bg-light">
         <section class="ftco-section-featured ftco-section-featured-2 ftco-animate">
             <div class="container-fluid" data-scrollax-parent="true">
-                <?php get_part('about-box'); ?>
+                <?php get_part('about-section'); ?>
             </div>
         </section>
     </div>

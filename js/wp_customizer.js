@@ -23,6 +23,7 @@
 
 	wp.customize.bind('ready', () => {
 		disableControlesInSection('display_about');
+		disableControlesInSection('display_services');
 	});
 
 })();

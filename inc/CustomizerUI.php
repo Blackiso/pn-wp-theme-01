@@ -9,13 +9,13 @@
 			$this->customizer = $customizer;
 		}
 
-		public function preset_input_text($id, $name, $des, $placeholder, $section, $text_type = 'text') {
+		public function preset_input_text($id, $name, $des, $placeholder, $parent, $text_type = 'text', $default = '') {
 			$control_id = "ct_id_".$id;
 			$setting_id = "st_id_".$id;
 			$this->add_setting($setting_id);
-			$this->customizer->create_control($control_id, $section, [
+			$this->customizer->create_control($control_id, $parent, [
 				'type' => $text_type,
-				'section' => $section['id'],
+				'section' => $parent['id'],
 				'label' => __($name),
 				'settings' => $setting_id,
 				'description' => __($des),
@@ -25,20 +25,20 @@
 			]);
 		}
 
-		public function preset_input_checkbox($id, $name, $des, $section) {
+		public function preset_input_checkbox($id, $name, $des, $parent) {
 			$control_id = "ct_id_".$id;
 			$setting_id = "st_id_".$id;
-			$this->add_setting($setting_id, 'postMessage', 1);
-			$this->customizer->create_control($control_id, $section, [
+			$this->add_setting($setting_id, 1, 'postMessage');
+			$this->customizer->create_control($control_id, $parent, [
 				'type' => 'checkbox',
-				'section' => $section['id'],
+				'section' => $parent['id'],
 				'label' => __($name),
 				'settings' => $setting_id,
 				'description' => __($des)
 			]);
 		}
 
-		function add_setting($id, $transport = 'refresh', $default = '') {
+		private function add_setting($id, $default = '', $transport = 'refresh') {
 			$this->customizer->create_setting($id, [
 				'type' => 'theme_mod',
 				'capability' => 'edit_theme_options',

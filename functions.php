@@ -95,7 +95,12 @@
 		include(locate_template('template-parts/'.$name.'.php', false, false));
 	}
 
+	function remove_page_text_editor() {
+		remove_post_type_support('page', 'editor');
+	}
+
 	// Wordpress hooks:
+	add_action('admin_init', 'remove_page_text_editor');
 	add_action('customize_register', 'customize_register');
 	add_action('init', 'create_portfolio_post_type');
 	add_action('after_setup_theme', 'register_menus');

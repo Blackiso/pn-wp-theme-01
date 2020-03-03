@@ -19,12 +19,12 @@
 		}
 
 		public function create_section($section) {
-			if (!in_array($section['panel']['id'], $this->panels)) $this->create_panel($section['panel']);
+			if (!in_array($section['parent']['id'], $this->panels)) $this->create_panel($section['parent']);
 
 			$this->manager->add_section($section['id'], [
 				'title' => __($section['title']),
 				'description' => __($section['des']),
-				'panel' => $section['panel']['id'],
+				'panel' => $section['parent']['id'],
 				'capability' => 'edit_theme_options',
 				'theme_supports' => '',
 			]);
@@ -35,8 +35,8 @@
 			$this->manager->add_setting($id, $options);
 		}
 
-		public function create_control($id, $section, $options) {
-			if (!in_array($section['id'], $this->sections)) $this->create_section($section);
+		public function create_control($id, $parent, $options) {
+			if (!in_array($parent['id'], $this->sections)) $this->create_section($parent);
 
 			$this->manager->add_control($id, $options);
 		}
