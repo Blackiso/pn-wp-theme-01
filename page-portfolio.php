@@ -1,49 +1,5 @@
-<?php get_header(); ?>
-<div class="hero-wrap js-fullheight">
-  <div class="overlay"></div>
-  <div id="particles-js"></div>
-  <div class="container">
-    <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
-      <div class="col-md-6 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-        <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Portfolio</span></p>
-        <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Portfolio</h1>
-      </div>
-    </div>
-  </div>
-</div>
-<section class="ftco-section">
-  <div class="container">
-    <div class="row no-gutters justify-content-center mb-5 pb-5">
-      <div class="col-md-7 text-center heading-section ftco-animate">
-        <span class="subheading">Works</span>
-        <h2 class="mb-4">View our works below to see our design and way of development.</h2>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
-      </div>
-    </div>
-    <div class="row">
-      <?php
-
-      for ($i = 0; $i < 5; $i++) {
-        get_part('single-portfolio-box', ['index' => $i]);
-      }
-
-      ?>
-    </div>
-    <div class="row mt-5">
-      <div class="col text-center">
-        <div class="block-27">
-          <ul>
-            <li><a href="#">&lt;</a></li>
-            <li class="active"><span>1</span></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li><a href="#">&gt;</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<?php get_footer(); ?>
+<?php
+get_header();
+set_query_var('is_home', false);
+get_template_part("theme-parts/portfolio");
+get_footer();
