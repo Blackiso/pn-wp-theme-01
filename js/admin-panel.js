@@ -26,12 +26,12 @@
 	}
 
 	window.onload = function() {
-		var post_ID = document.querySelector("#post_ID");
-		var post_ID = post_ID.value;
-		var scriptFunction = "runScriptForPost"+post_ID;
+		// var post_ID = document.querySelector("#post_ID");
+		// var post_ID = post_ID.value;
+		// var scriptFunction = "runScriptForPost"+post_ID;
 
-		var fn = window[scriptFunction];
-		if(typeof fn === 'function')  fn(post_ID);
+		// var fn = window[scriptFunction];
+		// if(typeof fn === 'function')  fn(post_ID);
 
 	}
 

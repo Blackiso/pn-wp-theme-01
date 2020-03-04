@@ -6,24 +6,49 @@
 	display: flex;
 }
 
-.snipp-panel-inp-label-grp {
+.snipp-inp-group {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
 	flex-direction: column;
-}
-
-.snipp-panel-inp-label-grp > label {
-	margin-bottom: 5px;
-}
-
-.snipp-panel-inp-label-grp > input,
-.snipp-panel-inp-label-grp > select {
 	margin-bottom: 10px;
 }
 
-.snipp-service {
-	border-bottom: 1px solid #d4d2d2;
-	margin-bottom: 20px;
+.snipp-inp-group > label {
+	margin-bottom: 5px;
+	font-weight: 600;
 }
 
-.snipp-panel-button-container > button {
-	margin-left: auto !important;
+.snipp-single-service-title {
+	margin-bottom: 10px;
+	display: block;
+}
+
+.snipp-services-block {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.snipp-single-service {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	margin-right: 15px;
+}
+
+.snipp-single-service:last-of-type {
+	margin-right: 0;
+}
+
+.snipp-section-options {
+	margin-bottom: 20px;
 }

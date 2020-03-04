@@ -8,7 +8,7 @@
 	require_once(TEMPLATE_DIR.'/inc/CustomizerUI.php');
 	require_once(TEMPLATE_DIR.'/inc/Customize.php');
 	require_once(TEMPLATE_DIR.'/inc/customizer.php');
-	require_once(TEMPLATE_DIR.'/inc/admin_panel_customization.php');
+	require_once(TEMPLATE_DIR.'/inc/admin-panel-metabox.php');
 
 	// Theme features:
 	add_theme_support('menus');
@@ -107,6 +107,12 @@
 
 	function remove_page_text_editor() {
 		remove_post_type_support('page', 'editor');
+	}
+
+	function get_services() {
+		$post_id = url_to_postid(site_url('services'));
+		$services = get_meta_box_array($post_id, 'services_meta_box');
+		return $services;
 	}
 
 	// Wordpress hooks:

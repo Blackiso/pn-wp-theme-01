@@ -10,18 +10,21 @@
 
 ///////////////////////////////////////////////////////////////////////////
 
+-You should always differentiate between theme options and site contents.
+
 -Customier should be used for theme option, options that affect the intire theme and how it looks not for page specific option.
 
 -Settings Api lets you add your theme options in the settings section of the wordpress dashboard.
 
 -Custom content can be stored in multiple diffrent ways:
-	-Storing data in post meta:
+
+	1-Storing data in post meta:
 		you can use this to add information related to the post being edited.
-	-Stroing data as Options theme mod:
+	2-Stroing data as Options theme mod:
 		for storing small data about how the overall theme should behave.
-	-Storing data as custom post types:
+	3-Storing data as custom post types:
 		for storing custom content for the site like the blog post.
-	-Storing data in custom tables:
+	4-Storing data in custom tables:
 
 
 ///////////////////////////////////////////////////////////////////////////
