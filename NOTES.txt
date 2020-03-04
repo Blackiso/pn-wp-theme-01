@@ -1,0 +1,31 @@
+-Unterstand the usage of the Customier API
+-Unterstand the usage of Settings API
+-Unterstand the usage of Theme Mods API
+-Reaserch about the right way of adding custom content to wordpress themes
+-Unterstand custom post types and taxonomies
+-Unterstand the WP_Query API
+-Reaserch editor blocks
+-Storing custom data on the database
+-Custom Meta Box vs Custom Fields
+
+///////////////////////////////////////////////////////////////////////////
+
+-Customier should be used for theme option, options that affect the intire theme and how it looks not for page specific option.
+
+-Settings Api lets you add your theme options in the settings section of the wordpress dashboard.
+
+-Custom content can be stored in multiple diffrent ways:
+	-Storing data in post meta:
+		you can use this to add information related to the post being edited.
+	-Stroing data as Options theme mod:
+		for storing small data about how the overall theme should behave.
+	-Storing data as custom post types:
+		for storing custom content for the site like the blog post.
+	-Storing data in custom tables:
+
+
+///////////////////////////////////////////////////////////////////////////
+
+--Important Links--
+https://wordpress.stackexchange.com/questions/97929/settings-api-vs-theme-customizer
+https://wordpress.stackexchange.com/questions/360032/using-customizer-api-vs-custom-meta-box-for-custom-content
