@@ -10,14 +10,19 @@
             </div>
         <?php endif; ?>
         <div class="row">
-            <?php if (have_posts()) :
+            <?php
+            if (!empty(get_posts())) :
+                global $post;
                 $posts_count = $is_home ? intval(get_theme_mod("blog_section_settings_4", 3)) : 6;
                 $posts_indice = 0;
-                while (have_posts()) : the_post();
-                    if ($posts_indice >= $posts_count) break;
-                    get_template_part("theme-parts/post-single");
-                    $posts_indice++;
-                endwhile;
+                foreach (get_posts() as $post) {
+                    if ($posts_count <= $posts_indice) break;
+                    if ($post->post_status === 'publish') {
+                        setup_postdata($post);
+                        get_template_part("theme-parts/blog-single");
+                        $posts_indice++;
+                    }
+                }
             endif;
             ?>
         </div>
