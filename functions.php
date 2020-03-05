@@ -13,6 +13,20 @@
 	// Theme features:
 	add_theme_support('menus');
 
+
+	//For debugging
+	function debug_arrays($array, $json = true) {
+		if ($json) {
+			header('Content-Type: application/json');
+			print_r(json_encode($array));
+		}else {
+			print_r($array);
+		}
+		
+		die();
+	}
+
+
 	function register_styles() {
 		$files = scandir(TEMPLATE_DIR.'/css');
 		foreach ($files as $file) {
@@ -109,10 +123,10 @@
 		remove_post_type_support('page', 'editor');
 	}
 
-	function get_services() {
-		$post_id = url_to_postid(site_url('services'));
-		$services = get_meta_box_array($post_id, 'services_meta_box');
-		return $services;
+	function get_page_meta($page_name) {
+		$post_id = url_to_postid(site_url($page_name));
+		$meta_data = get_meta_box_array($post_id, $page_name.'_meta_box');
+		return $meta_data;
 	}
 
 	// Wordpress hooks:
