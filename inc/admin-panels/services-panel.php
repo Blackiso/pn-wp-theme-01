@@ -9,12 +9,13 @@
 		); 
 	?>
 </div>
+<hr>
 <div class="snipp-services-block">
 	
 	<?php for ($i = 0; $i < 4; $i++): ?>
 
 	<div class="snipp-single-service">
-		<span class="snipp-single-service-title">#<?php echo __('Service').$i+1; ?></span>
+		<span class="snipp-single-service-title">#<?php echo __('Service'.($i+1)); ?></span>
 		<div>
 		<?php 
 			create_text_input(
@@ -31,4 +32,10 @@
 
 	<?php endfor; ?>
 
+</div>
+<hr>
+<div>
+	<?php 
+		create_text_editor('services-details', 'More Details', 'services-details', $current_values['services-details'], null);
+	?>
 </div>

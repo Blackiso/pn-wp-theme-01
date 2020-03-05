@@ -53,6 +53,13 @@
 	margin-right: 0;
 }
 
-.snipp-section-options {
+hr {
+	margin-top: 20px;
 	margin-bottom: 20px;
+}
+
+.snipp-title {
+	margin-bottom: 10px;
+    font-weight: 600;
+    display: block;
 }

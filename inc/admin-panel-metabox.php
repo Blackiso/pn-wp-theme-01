@@ -17,7 +17,7 @@
 		$current_meta_box = $metabox['args'][0].'_meta_box';
 		wp_nonce_field($current_meta_box, 'meta_box_nonce');
 		$current_values = get_meta_box_array($post->post_ID, $current_meta_box);
-		// debug_arrays($current_values, false);
+
 		require(ADMIN_PANELS.$metabox['args'][0].'-panel.php');
 	}
 
@@ -26,6 +26,8 @@
 		if (!isset( $_POST['meta_box_nonce']) || !wp_verify_nonce($_POST['meta_box_nonce'], $_POST['current_meta_box'])) return;
 		if (!current_user_can('edit_post', $post_id)) return;
 		if (!isset($_POST['current_meta_box'])) return;
+
+		// debug_arrays($_POST);
 
 		update_post_meta($post_id, $_POST['current_meta_box'], $_POST['customMeta']);
 	}
