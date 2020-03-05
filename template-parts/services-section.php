@@ -1,17 +1,18 @@
+<?php $details = get_page_meta('services'); ?>
 <section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-5">
                 <div class="col-md-6 text-center heading-section ftco-animate">
                     <span class="subheading">Our Services</span>
-                    <h2 class="mb-4">Web &amp; Mobile app design, bring your ideas to life</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+                    <h2 class="mb-4"><?php echo $details['services-section']['title']; ?></h2>
+                    <p><?php echo $details['services-section']['des']; ?></p>
                 </div>
             </div>
             <div class="row mb-5">
                  <?php 
             
                     for($i = 0; $i < 4; $i++) {
-                        get_part('single-service-box', ['index' => $i]);
+                        get_part('single-service-box', ['index' => $i, 'data' => $details['services'][$i]]);
                     }
 
                  ?>
