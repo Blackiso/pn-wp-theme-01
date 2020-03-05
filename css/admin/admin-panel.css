@@ -21,6 +21,10 @@
 	font-weight: 600;
 }
 
+.snipp-inp-group > textarea {
+	height: 100px;
+}
+
 .snipp-single-service-title {
 	margin-bottom: 10px;
 	display: block;
