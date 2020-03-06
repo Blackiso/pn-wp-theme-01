@@ -63,3 +63,72 @@ hr {
     font-weight: 600;
     display: block;
 }
+
+.snipp-note {
+	font-size: 12px;
+	color: #696c6f;
+	margin-top: -5px;
+	display: block;
+}
+
+.snipp-groupes-row {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.snipp-groupes-row > .snipp-inp-group {
+	flex: 1;
+	margin-right: 15px;
+}
+
+.snipp-groupes-row > .snipp-inp-group:last-of-type {
+	margin-right: 0px;
+}
+
+.snipp-sep {
+	height: 1px;
+	width: 100%;
+	background: #e0dfdf;
+	display: block;
+	margin-bottom: 15px;
+}
+
+.snipp-image {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+	width: 150px;
+	margin-bottom: 10px;
+}
+
+.snipp-image > img {
+	height: 150px;
+	margin-bottom: 5px;
+	margin-top: auto;
+}
+
+.snipp-image > input[type=button] {
+	margin-bottom: auto !important;
+}
+
+.snipp-member {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.snipp-member > .snipp-image {
+	margin-right: 15px;
+}
+
+.snipp-member-inps {
+	flex: 1;
+}

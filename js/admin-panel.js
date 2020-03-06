@@ -36,3 +36,32 @@
 	}
 
 })();
+
+jQuery(document).ready( function($) {
+
+	function upload_image(btn, e) {
+		e.preventDefault();
+		var inputId = btn.dataset.inp;
+		var imageId = btn.dataset.img;
+		var input = document.querySelector('#'+inputId);
+		var image = document.querySelector('#'+imageId);
+
+		console.log(inputId);
+
+		window.send_to_editor = (html) => {
+			imgurl = jQuery(html).attr('src');
+			input.value = imgurl;
+			image.src = imgurl;
+			tb_remove();
+		}
+
+		tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true' );
+        return false;
+	}
+
+	var uploadBtns = document.querySelectorAll('.img-upload-btn');
+	[...uploadBtns].forEach(btn => {
+		btn.addEventListener('click', upload_image.bind(this, btn));
+	});
+
+});
