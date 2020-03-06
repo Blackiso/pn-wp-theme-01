@@ -26,6 +26,18 @@
 		die();
 	}
 
+	function random_id($n) { 
+	    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
+	    $randomString = ''; 
+	  
+	    for ($i = 0; $i < $n; $i++) { 
+	        $index = rand(0, strlen($characters) - 1); 
+	        $randomString .= $characters[$index]; 
+	    } 
+	  
+	    return $randomString; 
+	} 
+
 
 	function register_styles() {
 		$files = scandir(TEMPLATE_DIR.'/css');
@@ -37,11 +49,15 @@
 	}
 
 	function load_admin_style() {
+		wp_enqueue_style('thickbox');
 		wp_enqueue_style('admin_css_panel', TEMPLATE_URI.'/css/admin/admin-panel.css', false, '1', 'all');
 	}
 
 	function load_admin_scripts($hook) {
 		if ($hook !== 'post.php') return;
+		wp_enqueue_script('jquery');
+		wp_enqueue_script('media-upload');
+		wp_enqueue_script('thickbox');
 		wp_enqueue_script('admin_js_panel', TEMPLATE_URI.'/js/admin-panel.js');
 	}
 
@@ -123,9 +139,9 @@
 		remove_post_type_support('page', 'editor');
 	}
 
-	function get_page_meta($page_name) {
+	function get_section_meta_box($page_name, $section_name) {
 		$post_id = url_to_postid(site_url($page_name));
-		$meta_data = get_meta_box_array($post_id, $page_name.'_meta_box');
+		$meta_data = get_meta_box_array($post_id, $section_name.'_meta_box');
 		return $meta_data;
 	}
 

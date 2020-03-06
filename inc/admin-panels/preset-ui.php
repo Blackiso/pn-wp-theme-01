@@ -27,6 +27,23 @@
 		<?php
 	}
 
+	function create_image_upload($label, $name, $value = null, $group, $collection = null, $index = 0) {
+
+		$name = snipp_get_post_name($name, $group, $collection, $index);
+		$inp_id = random_id(15);
+		$img_id = random_id(15);
+
+		?>
+	
+		<div class="snipp-image">
+			<img class="snipp-image-prev" src="<?php echo($value) ?>" id="<?php echo($img_id) ?>">
+			<input type="hidden" id="<?php echo($inp_id) ?>" name="<?php echo($name) ?>">
+			<input class="img-upload-btn button-primary" data-inp="<?php echo($inp_id) ?>" data-img="<?php echo($img_id) ?>" type="button" value="<?php echo(__($label)) ?>">
+		</div>
+
+		<?php
+	}
+
 	function create_text_editor($id, $label, $name, $value = null, $group) {
 
 		$fullName = snipp_get_post_name($name, $group);
@@ -44,14 +61,11 @@
 		$fullName = "customMeta[".$name."]";
 
 		if ($collection !== null) {
-
 			$fullName = "meta-boxes".$group."[".$collection."][".$index."][".$name."]";
-
 		}else {
-
 			$fullName = "meta-boxes".$group."[".$name."]";
-
 		}
+
 		return $fullName;
 	}
 
