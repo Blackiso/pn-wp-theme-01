@@ -1,6 +1,13 @@
 <?php
 
-	function create_text_input($label, $name, $placeholder, $value = null, $group = null, $collection = null, $type = 'input', $index = 0) {
+	function hidden_input($name, $group, $value) {
+		$name = snipp_get_post_name($name, $group);
+		?>
+			<input type="hidden" value="<?php echo($value) ?>" name="<?php echo($name) ?>">
+		<?php
+	}
+
+	function create_text_input($label, $name, $placeholder, $value = null, $group, $collection = null, $type = 'input', $index = 0) {
 
 		$fullName = snipp_get_post_name($name, $group, $collection, $index);
 		$attr = 'type="text" name="'.$fullName.'" placeholder="'.__($placeholder).'"';
@@ -20,7 +27,7 @@
 		<?php
 	}
 
-	function create_text_editor($id, $label, $name, $value = null, $group = null) {
+	function create_text_editor($id, $label, $name, $value = null, $group) {
 
 		$fullName = snipp_get_post_name($name, $group);
 
@@ -32,16 +39,18 @@
 
 	}
 
-	function snipp_get_post_name($name, $group = null, $collection = null, $index = 0) {
+	function snipp_get_post_name($name, $group, $collection = null, $index = 0) {
+		$group = strpos($group, "[") !== false ? $group : "[".$group."]";
 		$fullName = "customMeta[".$name."]";
 
-		if ($group !== null) {
+		if ($collection !== null) {
 
-			$fullName = "customMeta[".$group."][".$name."]";
+			$fullName = "meta-boxes".$group."[".$collection."][".$index."][".$name."]";
 
-		}elseif ($collection !== null) {
+		}else {
 
-			$fullName = "customMeta[".$collection."][".$index."][".$name."]";
+			$fullName = "meta-boxes".$group."[".$name."]";
+
 		}
 		return $fullName;
 	}

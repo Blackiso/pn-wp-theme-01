@@ -6,9 +6,33 @@
 
 	function add_page_meta_box() {
 		$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+		$pages = [
+			12 => [
+				[
+					'id' => 'services_meta_box',
+					'title' => 'Services Section',
+					'args' => ['services']
+				]
+			],
+			9 => [
+				[
+					'id' => 'about_meta_box',
+					'title' => 'About Section',
+					'args' => ['about']
+				],
+				[
+					'id' => 'team_meta_box',
+					'title' => 'Team Section',
+					'args' => ['team']
+				]
+			]
+		];
 
-		if ($post_id == 12) {
-			add_meta_box('services_meta_box', 'Services Section', 'render_meta_box', 'page', 'normal', 'high', ['services']);
+		if (isset($pages[$post_id])) {
+			foreach ($pages[$post_id] as $box) {
+				add_meta_box($box['id'], $box['title'], 'render_meta_box', 'page', 'normal', 'high', $box['args']);
+			}
+			
 		}
 		
 	}
@@ -22,14 +46,24 @@
 	}
 
 	function save_page_meta_box($post_id) {
+
+		debug_arrays($_POST);
+
 		if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
-		if (!isset( $_POST['meta_box_nonce']) || !wp_verify_nonce($_POST['meta_box_nonce'], $_POST['current_meta_box'])) return;
 		if (!current_user_can('edit_post', $post_id)) return;
-		if (!isset($_POST['current_meta_box'])) return;
 
-		// debug_arrays($_POST);
+		if (isset($_POST['meta-boxes'])) {
+			foreach ($_POST['meta-boxes'] as $meta_box) {
+				if (!isset($meta_box['current_meta_box'])) return;
 
-		update_post_meta($post_id, $_POST['current_meta_box'], $_POST['customMeta']);
+				$meta_box_id = $meta_box['current_meta_box'];
+				unset($meta_box['current_meta_box']);
+
+				if (!isset( $_POST['meta_box_nonce']) || !wp_verify_nonce($_POST['meta_box_nonce'], $meta_box_id)) return;
+
+				update_post_meta($post_id, $meta_box_id, $meta_box);
+			}
+		}
 	}
 
 	function get_meta_box_array($post_id, $meta) {
