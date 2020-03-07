@@ -51,8 +51,14 @@
 
 	function render_meta_box($post, $metabox) {
 		$current_meta_box = $metabox['args']['meta'].'_meta_box';
+		$p_id = $post->post_ID;
+
 		wp_nonce_field($current_meta_box, $current_meta_box.'_nonce');
-		$p_id = $metabox['args']['post'] ?? $post->post_ID;
+		if (isset($metabox['args']['post'])) {
+			$p_id = $metabox['args']['post'];
+			hidden_input('save_to_post', $metabox['args']['meta'].'-section', $p_id);
+		}
+
 		$current_values = get_meta_box_array($p_id, $current_meta_box);
 
 		require(ADMIN_PANELS.$metabox['args']['meta'].'-panel.php');
@@ -75,6 +81,7 @@
 				unset($meta_box['current_meta_box']);
 
 				if (!isset($_POST[$meta_box_id.'_nonce']) || !wp_verify_nonce($_POST[$meta_box_id.'_nonce'], $meta_box_id)) return;
+				if (isset($meta_box['save_to_post'])) $post_id = $meta_box['save_to_post'];
 
 				update_post_meta($post_id, $meta_box_id, $meta_box);
 			}

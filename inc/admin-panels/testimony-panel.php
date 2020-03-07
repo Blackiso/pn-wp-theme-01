@@ -1,4 +1,4 @@
-<?php hidden_input('current_meta_box', 'testimony-section', $current_meta_box) ?>
+<?php hidden_input('current_meta_box', 'testimony-section', $current_meta_box); ?>
 <div class="snipp-section-options">
 	<?php 
 		create_text_input('Testimony Section Tag', 'tag', 'Enter testimony section tag', 
