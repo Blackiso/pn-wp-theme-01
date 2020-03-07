@@ -11,26 +11,38 @@
 				[
 					'id' => 'services_meta_box',
 					'title' => 'Services Section',
-					'args' => ['services']
+					'args' => ['meta' => 'services']
 				]
 			],
 			9 => [
 				[
 					'id' => 'about_meta_box',
 					'title' => 'About Section',
-					'args' => ['about']
+					'args' => ['meta' => 'about']
 				],
 				[
 					'id' => 'team_meta_box',
 					'title' => 'Team Section',
-					'args' => ['team']
+					'args' => ['meta' => 'team']
+				],
+				[
+					'id' => 'testimony_meta_box',
+					'title' => 'Testimony Section',
+					'args' => ['meta' => 'testimony']
+				]
+			],
+			30 => [
+				[
+					'id' => 'testimony_meta_box',
+					'title' => 'Testimony Section',
+					'args' => ['meta' => 'testimony', 'post' => 9]
 				]
 			]
 		];
 
 		if (isset($pages[$post_id])) {
 			foreach ($pages[$post_id] as $box) {
-				add_meta_box($box['id'], __($box['title']), 'render_meta_box', 'page', 'normal', 'high', $box['args']);
+				add_meta_box($box['id'], __($box['title']), 'render_meta_box', 'page', 'normal', 'low', $box['args']);
 			}
 			
 		}
@@ -38,11 +50,12 @@
 	}
 
 	function render_meta_box($post, $metabox) {
-		$current_meta_box = $metabox['args'][0].'_meta_box';
+		$current_meta_box = $metabox['args']['meta'].'_meta_box';
 		wp_nonce_field($current_meta_box, $current_meta_box.'_nonce');
-		$current_values = get_meta_box_array($post->post_ID, $current_meta_box);
+		$p_id = $metabox['args']['post'] ?? $post->post_ID;
+		$current_values = get_meta_box_array($p_id, $current_meta_box);
 
-		require(ADMIN_PANELS.$metabox['args'][0].'-panel.php');
+		require(ADMIN_PANELS.$metabox['args']['meta'].'-panel.php');
 	}
 
 	function save_page_meta_box($post_id) {
