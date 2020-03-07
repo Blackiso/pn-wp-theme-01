@@ -30,7 +30,7 @@
 
 		if (isset($pages[$post_id])) {
 			foreach ($pages[$post_id] as $box) {
-				add_meta_box($box['id'], $box['title'], 'render_meta_box', 'page', 'normal', 'high', $box['args']);
+				add_meta_box($box['id'], __($box['title']), 'render_meta_box', 'page', 'normal', 'high', $box['args']);
 			}
 			
 		}
@@ -39,7 +39,7 @@
 
 	function render_meta_box($post, $metabox) {
 		$current_meta_box = $metabox['args'][0].'_meta_box';
-		wp_nonce_field($current_meta_box, 'meta_box_nonce');
+		wp_nonce_field($current_meta_box, $current_meta_box.'_nonce');
 		$current_values = get_meta_box_array($post->post_ID, $current_meta_box);
 
 		require(ADMIN_PANELS.$metabox['args'][0].'-panel.php');
@@ -47,19 +47,21 @@
 
 	function save_page_meta_box($post_id) {
 
-		debug_arrays($_POST);
+		// debug_arrays($_POST);
 
 		if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
 		if (!current_user_can('edit_post', $post_id)) return;
 
 		if (isset($_POST['meta-boxes'])) {
+
 			foreach ($_POST['meta-boxes'] as $meta_box) {
+
 				if (!isset($meta_box['current_meta_box'])) return;
 
 				$meta_box_id = $meta_box['current_meta_box'];
 				unset($meta_box['current_meta_box']);
 
-				if (!isset( $_POST['meta_box_nonce']) || !wp_verify_nonce($_POST['meta_box_nonce'], $meta_box_id)) return;
+				if (!isset($_POST[$meta_box_id.'_nonce']) || !wp_verify_nonce($_POST[$meta_box_id.'_nonce'], $meta_box_id)) return;
 
 				update_post_meta($post_id, $meta_box_id, $meta_box);
 			}

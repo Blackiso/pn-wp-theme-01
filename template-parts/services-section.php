@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
             <div class="col-md-6 text-center heading-section ftco-animate">
-                <span class="subheading">Our Services</span>
+                <span class="subheading"><?php echo $meta_data['tag']; ?></span>
                 <h2 class="mb-4"><?php echo $meta_data['title']; ?></h2>
                 <p><?php echo $meta_data['des']; ?></p>
             </div>

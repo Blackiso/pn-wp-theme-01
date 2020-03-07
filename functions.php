@@ -28,7 +28,7 @@
 
 	function random_id($n) { 
 	    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'; 
-	    $randomString = ''; 
+	    $randomString = 'id'; 
 	  
 	    for ($i = 0; $i < $n; $i++) { 
 	        $index = rand(0, strlen($characters) - 1); 
@@ -65,7 +65,7 @@
 		$files = scandir(TEMPLATE_DIR.'/js/lib');
 		foreach ($files as $file) {
 			$dependecy = [];
-			if ($file !== 'jquery.min.js') array_push($dependecy, 'jquery.min.js');
+			if ($file !== 'jquery.min.js') $dependecy[] = 'jquery.min.js';
 
 			if (strpos($file, '.js') !== false) {
 				wp_enqueue_script($file, TEMPLATE_URI.'/js/lib/'.$file, $dependecy, '1', true);
@@ -157,5 +157,5 @@
 	add_action('admin_enqueue_scripts', 'load_admin_scripts');
 	add_filter('nav_menu_css_class', 'menu_custom_li_classes');
 	add_filter('nav_menu_link_attributes', 'menu_custom_a_classes');
-	
+
  

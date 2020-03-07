@@ -17,7 +17,7 @@
 				<label for="<?php echo($name) ?>"><?php echo __($label); ?></label>	
 
 				<?php if ($type == 'textarea'): ?>
-				<textarea <?php echo $attr; ?>> <?php echo $value; ?> </textarea>
+				<textarea <?php echo $attr; ?>><?php echo $value; ?></textarea>
 				<?php endif; ?>
 
 				<?php if ($type == 'input'): ?>
@@ -37,7 +37,7 @@
 	
 		<div class="snipp-image">
 			<img class="snipp-image-prev" src="<?php echo($value) ?>" id="<?php echo($img_id) ?>">
-			<input type="hidden" id="<?php echo($inp_id) ?>" name="<?php echo($name) ?>">
+			<input type="hidden" id="<?php echo($inp_id) ?>" name="<?php echo($name) ?>" value="<?php echo($value) ?>">
 			<input class="img-upload-btn button-primary" data-inp="<?php echo($inp_id) ?>" data-img="<?php echo($img_id) ?>" type="button" value="<?php echo(__($label)) ?>">
 		</div>
 

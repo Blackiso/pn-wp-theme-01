@@ -21,44 +21,29 @@
     </div>
     <div class="ftco-section">
         <div class="container">
+            <?php 
+                $team_meta_data = get_section_meta_box('about', 'team'); 
+            ?>
             <div class="row justify-content-center mb-5 pb-5">
                 <div class="col-md-7 text-center heading-section ftco-animate">
-                    <span class="subheading">Team</span>
-                    <h2 class="mb-4">Our Team</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+                    <span class="subheading"><?php echo $team_meta_data['tag']; ?></span>
+                    <h2 class="mb-4"><?php echo $team_meta_data['title']; ?></h2>
+                    <p><?php echo $team_meta_data['des']; ?></p>
                 </div>
             </div>
             <div class="row">
+                <?php foreach ($team_meta_data['members'] as $member): ?>
                 <div class="col-md-4 mb-5 ftco-animate">
                     <div class="block-10">
                         <div class="person-info mb-2">
-                            <span class="name">Jacob Smith</span>
-                            <span class="position">Co Designer</span>
+                            <span class="name"><?php echo $member['name']; ?></span>
+                            <span class="position"><?php echo $member['role']; ?></span>
                         </div>
-                        <img src="<?php echo TEMPLATE_URI ?>/images/person_1.jpg" alt="" class="img-fluid mb-3">
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                        <img src="<?php echo($member['img']); ?>" alt="" class="img-fluid mb-3">
+                        <p><?php echo $member['des']; ?></p>
                     </div>
                 </div>
-                <div class="col-md-4 mb-5 ftco-animate">
-                    <div class="block-10">
-                        <div class="person-info mb-2">
-                            <span class="name">Aldin Henderson</span>
-                            <span class="position">Web Developer</span>
-                        </div>
-                        <img src="<?php echo TEMPLATE_URI ?>/images/person_3.jpg" alt="" class="img-fluid mb-3">
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-5 ftco-animate">
-                    <div class="block-10">
-                        <div class="person-info mb-2">
-                            <span class="name">Mark Willis</span>
-                            <span class="position">Lead Web Developer</span>
-                        </div>
-                        <img src="<?php echo TEMPLATE_URI ?>/images/person_2.jpg" alt="" class="img-fluid mb-3">
-                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

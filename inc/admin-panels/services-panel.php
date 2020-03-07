@@ -1,8 +1,10 @@
 <?php hidden_input('current_meta_box', 'services-section', $current_meta_box) ?>
 <div class="snipp-section-options">
 	<?php 
+		create_text_input('Services Section Tag', 'tag', 'Enter services section tag', 
+			$current_values['tag'], 'services-section'); 
 		create_text_input('Services Section Title', 'title', 'Enter services section title', 
-			$current_values['title'], 'services-section'); 
+			$current_values['title'], 'services-section');
 		create_text_input(
 			'Services Section Description', 'des', 'Enter services section description', 
 			$current_values['des'], 'services-section', null, 'textarea'

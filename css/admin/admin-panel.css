@@ -123,6 +123,9 @@ hr {
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
+	padding-bottom: 5px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #e8e8e8;
 }
 
 .snipp-member > .snipp-image {
@@ -131,4 +134,17 @@ hr {
 
 .snipp-member-inps {
 	flex: 1;
+}
+
+.snipp-button-container {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	width: 100%;
+}
+
+.snipp-button-container > button {
+	margin-left: auto !important;
 }
