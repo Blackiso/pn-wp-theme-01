@@ -3,21 +3,16 @@
             <div class="row mb-5">
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
-                        <h2 class="ftco-heading-2">Snipp.</h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        <h2 class="ftco-heading-2"> <?php bloginfo('name'); ?> </h2>
+                        <p> <?php bloginfo('description'); ?> </p>
                     </div>
                 </div>
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4 ml-5">
                         <h2 class="ftco-heading-2">Quick Links</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="py-2 d-block">Home</a></li>
-                            <li><a href="#" class="py-2 d-block">Case studies</a></li>
-                            <li><a href="#" class="py-2 d-block">Services</a></li>
-                            <li><a href="#" class="py-2 d-block">Portfolio</a></li>
-                            <li><a href="#" class="py-2 d-block">About</a></li>
-                            <li><a href="#" class="py-2 d-block">Contact</a></li>
-                        </ul>
+
+                        <?php snipp_get_footer_links(); ?>
+
                     </div>
                 </div>
                 <div class="col-md">

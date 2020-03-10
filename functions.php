@@ -9,9 +9,11 @@
 
 		add_theme_support('menus');
 		add_theme_support('post-thumbnails');
+		add_theme_support('widgets');
 
 		register_nav_menus([
-			'main-menu' => __('Main menu')
+			'main-menu' => __('Main Menu'),
+			'footer-links' => __('Footer Links')
 		]);
 
 	}
@@ -50,3 +52,4 @@
 
 	//Require other scripts
 	require SNIPP_INC.'template-functions.php';
+	require SNIPP_INC.'widgets/contact-info.php';

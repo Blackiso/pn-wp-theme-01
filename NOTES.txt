@@ -9,6 +9,7 @@
 -Custom Meta Box vs Custom Fields
 -Check when parts of code should be executed
 -Add custom actions
+-Add custom widgets
 
 
 ///////////////////////////////////////////////////////////////////////////

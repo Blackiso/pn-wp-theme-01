@@ -10,6 +10,16 @@
 
 	}
 
+	function snipp_get_footer_links() {
+
+		wp_nav_menu([
+            'theme_location' => 'footer-links',
+            'menu_class' => 'list-unstyled',
+            'container' => ''
+        ]); 
+
+	}
+
 	function snipp_menu_li_class($classes, $item, $args) {
 
 		if ($args->theme_location == 'main-menu') {
@@ -26,6 +36,10 @@
 
 		if ($args->theme_location == 'main-menu') {
 			$attr['class'] = 'nav-link';
+		}
+
+		if ($args->theme_location == 'footer-links') {
+			$attr['class'] = 'py-2 d-block';
 		}
 
 		return $attr;
