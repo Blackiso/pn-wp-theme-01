@@ -44,7 +44,6 @@
 			foreach ($pages[$post_id] as $box) {
 				add_meta_box($box['id'], __($box['title']), 'render_meta_box', 'page', 'normal', 'low', $box['args']);
 			}
-			
 		}
 		
 	}

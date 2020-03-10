@@ -7,6 +7,9 @@
 -Reaserch editor blocks
 -Storing custom data on the database
 -Custom Meta Box vs Custom Fields
+-Check when parts of code should be executed
+-Add custom actions
+
 
 ///////////////////////////////////////////////////////////////////////////
 
